@@ -4,37 +4,61 @@
   <meta charset="UTF-8">
   <title>புதிய பார்வை</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      line-height: 1.7;
+    body{
+      margin:0;
+      font-family: "Noto Sans Tamil", sans-serif;
+      background:#f4f4f4;
+      color:#222;
     }
-    header {
-      background: #b30000;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
+    header{
+      background:#b71c1c;
+      color:#fff;
+      padding:20px;
+      text-align:center;
     }
-    .container {
-      max-width: 900px;
-      margin: 20px auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 6px;
+    nav{
+      background:#222;
+      padding:10px;
+      text-align:center;
     }
-    footer {
-      background: #222;
-      color: #ccc;
-      text-align: center;
-      padding: 10px;
-      font-size: 14px;
+    nav a{
+      color:#fff;
+      margin:0 15px;
+      text-decoration:none;
+      font-weight:bold;
+    }
+    nav a:hover{
+      text-decoration:underline;
+    }
+    .container{
+      max-width:900px;
+      margin:20px auto;
+      padding:15px;
+      background:#fff;
+    }
+    .news-item{
+      border-bottom:1px solid #ddd;
+      padding:15px 0;
+    }
+    .news-item:last-child{
+      border:none;
+    }
+    .news-item h2{
+      margin:0 0 8px;
+      color:#b71c1c;
+      font-size:20px;
+    }
+    footer{
+      background:#222;
+      color:#ccc;
+      text-align:center;
+      padding:15px;
+      margin-top:30px;
+      font-size:14px;
     }
   </style>
 </head>
-
 <body>
 
 <header>
@@ -42,12 +66,25 @@
   <p>தமிழ் செய்திகள் & பார்வைகள்</p>
 </header>
 
+<nav>
+  <a href="#">முகப்பு</a>
+  <a href="#">செய்திகள்</a>
+  <a href="#">தொடர்புக்கு</a>
+</nav>
+
 <div class="container">
-  <h2>வரவேற்கிறோம் 👋</h2>
-  <p>
-    இது <strong>புதிய பார்வை</strong> இணையதளத்தின் ஆரம்பப் பக்கம்.  
-    இங்கு விரைவில் முழுமையான தமிழ் செய்திகள் வெளியாகும்.
-  </p>
+  <h2>🗞️ சமீபத்திய செய்திகள்</h2>
+
+  <div class="news-item">
+    <h2>முல்லைப்பெரியாறு தண்ணீரில் கழிவுநீர் கலப்பு</h2>
+    <p>தமிழகப்பகுதிக்கு வரும் தண்ணீரில் கழிவுநீர் கலப்பை தடுக்கும் திட்டத்தை உடனடியாக செயல்படுத்த வேண்டும் என விவசாயிகள் கோரிக்கை.</p>
+  </div>
+
+  <div class="news-item">
+    <h2>கம்பம் – தேனி விவசாயிகளின் புதிய கோரிக்கை</h2>
+    <p>பாசன வசதி மற்றும் குடிநீர் பாதுகாப்பு குறித்து அரசுக்கு கோரிக்கை மனு.</p>
+  </div>
+
 </div>
 
 <footer>
