@@ -1,0 +1,72 @@
+/* ====== Base Layout ====== */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, "Noto Sans Tamil", sans-serif;
+  background: #f9f9f9;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 15px;
+  background: #fff;
+}
+
+/* ====== Title ====== */
+
+h1 {
+  color: #b30000;
+  font-size: 34px;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+/* ====== Meta ====== */
+
+.meta {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* ====== News Image ====== */
+
+.news-image {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.main-news-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* ====== Content ====== */
+
+p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #222;
+  text-align: justify;
+}
+
+/* ====== Mobile Fix ====== */
+
+@media (max-width: 600px) {
+
+  h1 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+}
