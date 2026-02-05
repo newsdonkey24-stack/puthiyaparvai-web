@@ -1,0 +1,16 @@
+[
+  {
+    "title": "தேசிய தொழுநோய் விழிப்புணர்வு முகாம்",
+    "summary": "கம்பத்தில் நடைபெற்ற தேசிய தொழுநோய் விழிப்புணர்வு முகாம் பொதுமக்களிடையே விழிப்புணர்வை ஏற்படுத்தியது.",
+    "image": "images/news/leprosy-camp-kambam.jpeg",
+    "link": "news/national-leprosy-awareness-camp.html",
+    "breaking": true
+  },
+  {
+    "title": "பெரியாறு அணை வெடிகுண்டு மிரட்டல்",
+    "summary": "பெரியாறு அணைக்கு வந்த மிரட்டலை தொடர்ந்து போலீசார் தீவிர விசாரணை மேற்கொண்டு வருகின்றனர்.",
+    "image": "images/news/idukki-police.jpeg",
+    "link": "news/periyar-idukki-bomb-threat.html",
+    "breaking": true
+  }
+]
