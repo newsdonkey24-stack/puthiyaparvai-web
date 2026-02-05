@@ -12,5 +12,12 @@
     "image": "images/news/idukki-police.jpeg",
     "link": "news/periyar-idukki-bomb-threat.html",
     "breaking": true
-  }
+  },
+{
+  "title": "டெஸ்ட் செய்தி - Auto System வேலை செய்கிறது",
+  "summary": "இந்த செய்தி auto homepage system மூலம் தானாக வந்துள்ளது.",
+  "image": "images/news/test.jpg",
+  "link": "news/test-news.html",
+  "breaking": true
+}
 ]
