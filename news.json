@@ -25,7 +25,7 @@
   "summary": "இந்த செய்தி auto homepage system மூலம் தானாக வந்துள்ளது.",
   "image": "images/news/test.jpg",
   "link": "news/test-news.html",
-  "breaking": true
+  "breaking": false
 },
 {
   "title": "கம்பத்தில் புதிய ஆம்னி பஸ் நிலையம், புதிய வணிக வளாகம் திறப்பு",
