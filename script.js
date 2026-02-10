@@ -1,4 +1,4 @@
-fetch("news.json")
+fetch("/puthiyaparvai-web/news.json")
   .then(res => res.json())
   .then(data => {
 
