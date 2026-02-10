@@ -19,7 +19,7 @@ fetch("news.json")
       div.className = "news-item";
 
       div.innerHTML = `
-        ${news.breaking ? <span class="breaking">முக்கிய செய்தி</span> : ""}
+        ${news.breaking ? `<span class="breaking">முக்கிய செய்தி</span>` : ""}
         <img src="${news.image}" class="thumb" alt="${news.title}">
         <h2>
           <a href="${news.link}">
