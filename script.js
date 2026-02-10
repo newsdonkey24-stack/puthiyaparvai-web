@@ -1,20 +1,25 @@
 fetch("news.json")
   .then(res => res.json())
   .then(data => {
+
     const container = document.querySelector(".container");
     if (!container) return;
 
+    // Clear old content
     container.innerHTML = "";
 
+    // Separate breaking & normal news
     const breakingNews = data.filter(n => n.breaking === true);
     const normalNews = data.filter(n => !n.breaking);
 
+    // Show breaking first, then normal
     [...breakingNews, ...normalNews].forEach(news => {
+
       const div = document.createElement("div");
       div.className = "news-item";
 
-      div.innerHTML =`
-        ${news.breaking ? <span `class="breaking">முக்கிய செய்தி</span>` : ""}
+      div.innerHTML = `
+        ${news.breaking ? <span class="breaking">முக்கிய செய்தி</span> : ""}
         <img src="${news.image}" class="thumb" alt="${news.title}">
         <h2>
           <a href="${news.link}">
@@ -25,6 +30,8 @@ fetch("news.json")
       `;
 
       container.appendChild(div);
+
     });
+
   })
   .catch(err => console.error("News load error:", err));
