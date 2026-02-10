@@ -25,15 +25,19 @@ fetch("../news.json")
       const div = document.createElement("div");
       div.className = "news-item";
 
-      div.innerHTML = `
-        <img src="../${news.image}" class="thumb" alt="${news.title}">
-        <h2>
-          <a href="../${news.link}">
-            ${news.title}
-          </a>
-        </h2>
-        <p>${news.summary}</p>
-      `;
+     div.innerHTML = `
+  ${news.breaking ? '<span class="breaking">முக்கிய செய்தி</span>' : ''}
+
+  <img src="${news.image}" class="thumb" alt="${news.title}" />
+
+  <h2>
+    <a href="${news.link}">
+      ${news.title}
+    </a>
+  </h2>
+
+  <p>${news.summary}</p>
+`;
 
       container.appendChild(div);
     });
