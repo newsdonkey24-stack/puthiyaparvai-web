@@ -7,7 +7,20 @@ fetch("/puthiyaparvai-web/news.json")
 
     if (!main) return;
 
-    data.forEach(news => {
+    // Get category from body
+    const pageCategory = document.body.dataset.category;
+
+    // Filter data
+    let filteredData = data;
+
+    if (pageCategory && pageCategory.trim() !== "") {
+      filteredData = data.filter(
+        item => item.category === pageCategory
+      );
+    }
+
+    // Show news
+    filteredData.forEach(news => {
 
       const div = document.createElement("div");
       div.className = "news-card";
