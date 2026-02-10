@@ -85,3 +85,46 @@ p {
   line-height: 1.6;
   padding: 5px 10px;
 }
+/* Category Page */
+.site-header {
+  background: #b71c1c;
+  color: #fff;
+  padding: 12px;
+  text-align: center;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.news-item {
+  background: #fff;
+  margin: 12px;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.news-item h2 {
+  font-size: 18px;
+  margin: 8px 0;
+}
+
+.news-item a {
+  color: #000;
+  text-decoration: none;
+}
+
+.news-item a:hover {
+  color: #b71c1c;
+}
+
+.news-item p {
+  font-size: 15px;
+  color: #444;
+}
+
+.thumb {
+  width: 100%;
+  border-radius: 6px;
+}
