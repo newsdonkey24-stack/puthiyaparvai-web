@@ -19,21 +19,21 @@
     "title": "தேசிய தொழுநோய் விழிப்புணர்வு முகாம்",
     "summary": "கம்பத்தில் நடைபெற்ற தேசிய தொழுநோய் விழிப்புணர்வு முகாம் பொதுமக்களிடையே விழிப்புணர்வை ஏற்படுத்தியது.",
     "image": "/puthiyaparvai-web/images/news/leprosy-camp-kambam.jpeg",
-    "link": "https:/newsdonkey24-stack.github.io/puthiyaparvai-web/news/national-leprosy-awareness-camp.html",
+    "link": "/puthiyaparvai-web/news/national-leprosy-awareness-camp.html",
     "breaking": false
   },
   {
     "title": "பெரியாறு அணை வெடிகுண்டு மிரட்டல்",
     "summary": "பெரியாறு அணைக்கு வந்த மிரட்டலை தொடர்ந்து போலீசார் தீவிர விசாரணை மேற்கொண்டு வருகின்றனர்.",
     "image": "/puthiyaparvai-web/images/news/idukki-police.jpeg",
-    "link": "https:/newsdonkey24-stack.github.io/puthiyaparvai-web/news/periyar-idukki-bomb-threat.html",
+    "link": "/puthiyaparvai-web/news/periyar-idukki-bomb-threat.html",
     "breaking": false
   },
 {
   "title": "டெஸ்ட் செய்தி - Auto System வேலை செய்கிறது",
   "summary": "இந்த செய்தி auto homepage system மூலம் தானாக வந்துள்ளது.",
   "image": "/puthiyaparvai-web/images/news/test.jpg",
-  "link": "https:/newsdonkey24-stack.github.io/puthiyaparvai-web/news/test-news.html",
+  "link": "/puthiyaparvai-web/news/test-news.html",
   "breaking": false
 },
 {
@@ -47,7 +47,7 @@
   "title": "கம்பம் அரசு மருத்துவமனையில் அவசர பேறுகால சிகிச்சை மையம் திறப்பு விழா",
   "summary": "கம்பம் அரசு மருத்துவமனையில் ரூ.10 கோடி செலவில் கட்டப்பட்ட ஒருங்கிணைந்த அவசர பேறுகால மற்றும் பச்சிளங்குழந்தைகளுக்கான தீவிர சிகிச்சை மையம் திறப்பு.",
   "image": "/puthiyaparvai-web/images/news/kambam-hospital-opening.jpeg",
-  "link": "https:/newsdonkey24-stack.github.io/puthiyaparvai-web/news/kambam-hospital-opening.html",
+  "link": "/puthiyaparvai-web/news/kambam-hospital-opening.html",
   "breaking": true
 }
 ]
