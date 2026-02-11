@@ -2,7 +2,7 @@
   {
   "title": "சட்டமன்றத் தேர்தலில் எந்த கட்சியோடு கூட்டணி அமைத்தாலும் கம்பம் தொகுதியில் போட்டியிடுவேன் - ஜெகநாத் மிஸ்ரா",
   "summary": "எந்த கட்சியோடு கூட்டணி அமைத்தாலும் கம்பம் தொகுதியில் போட்டியிடுவேன் என ஜெகநாத் மிஸ்ரா தெரிவித்தார்.",
-  "image": "images/news/misra-news-cumbum.jpeg",
+  "image": "/puthiyaparvai-web/images/news/misra-news-cumbum.jpeg",
   "link": "/puthiyaparvai-web/news/misra-election-cumbum.html",
   "breaking": true,
   "category": "arasiyal"
@@ -10,7 +10,7 @@
   {
   "title": "லோயர் - குமுளி மலைச்சாலையில் பிளாஸ்டிக் கழிவுகள் அகற்றம்",
   "summary": "லோயர் - குமுளி மலைச்சாலையில் வனத்துறையினர் மற்றும் பள்ளி மாணவர்கள் இணைந்து பிளாஸ்டிக் கழிவுகளை அகற்றினர்.",
-  "image": "images/news/gdr-forest.jpeg",
+  "image": "/puthiyaparvai-web/images/news/gdr-forest.jpeg",
   "link": "https:/newsdonkey24-stack.github.io/puthiyaparvai-web/news/lower-kumuli-plastic-cleaning.html",
   "breaking": true,
     "category": "maavattam"
@@ -18,35 +18,35 @@
   {
     "title": "தேசிய தொழுநோய் விழிப்புணர்வு முகாம்",
     "summary": "கம்பத்தில் நடைபெற்ற தேசிய தொழுநோய் விழிப்புணர்வு முகாம் பொதுமக்களிடையே விழிப்புணர்வை ஏற்படுத்தியது.",
-    "image": "images/news/leprosy-camp-kambam.jpeg",
+    "image": "/puthiyaparvai-web/images/news/leprosy-camp-kambam.jpeg",
     "link": "https:/newsdonkey24-stack.github.io/puthiyaparvai-web/news/national-leprosy-awareness-camp.html",
     "breaking": false
   },
   {
     "title": "பெரியாறு அணை வெடிகுண்டு மிரட்டல்",
     "summary": "பெரியாறு அணைக்கு வந்த மிரட்டலை தொடர்ந்து போலீசார் தீவிர விசாரணை மேற்கொண்டு வருகின்றனர்.",
-    "image": "images/news/idukki-police.jpeg",
+    "image": "/puthiyaparvai-web/images/news/idukki-police.jpeg",
     "link": "https:/newsdonkey24-stack.github.io/puthiyaparvai-web/news/periyar-idukki-bomb-threat.html",
     "breaking": false
   },
 {
   "title": "டெஸ்ட் செய்தி - Auto System வேலை செய்கிறது",
   "summary": "இந்த செய்தி auto homepage system மூலம் தானாக வந்துள்ளது.",
-  "image": "images/news/test.jpg",
+  "image": "/puthiyaparvai-web/images/news/test.jpg",
   "link": "https:/newsdonkey24-stack.github.io/puthiyaparvai-web/news/test-news.html",
   "breaking": false
 },
 {
   "title": "கம்பத்தில் புதிய ஆம்னி பஸ் நிலையம், புதிய வணிக வளாகம் திறப்பு",
   "summary": "கம்பத்தில் ரூ.2.65 கோடி மதிப்பில் ஆம்னி பஸ் நிலையமும், ரூ.1.78 கோடி மதிப்பில் வணிக வளாகமும் முதல்வர் மு.க.ஸ்டாலின் காணொலி மூலம் திறந்து வைத்தார்.",
-  "image": "image/kambam-bus-stand.jpeg",
+  "image": "/puthiyaparvai-web/image/kambam-bus-stand.jpeg",
   "link": "/puthiyaparvai-web/news/kambam-new-bus-stand.html",
   "breaking": true
 },
   {
   "title": "கம்பம் அரசு மருத்துவமனையில் அவசர பேறுகால சிகிச்சை மையம் திறப்பு விழா",
   "summary": "கம்பம் அரசு மருத்துவமனையில் ரூ.10 கோடி செலவில் கட்டப்பட்ட ஒருங்கிணைந்த அவசர பேறுகால மற்றும் பச்சிளங்குழந்தைகளுக்கான தீவிர சிகிச்சை மையம் திறப்பு.",
-  "image": "images/news/kambam-hospital-opening.jpeg",
+  "image": "/puthiyaparvai-web/images/news/kambam-hospital-opening.jpeg",
   "link": "https:/newsdonkey24-stack.github.io/puthiyaparvai-web/news/kambam-hospital-opening.html",
   "breaking": true
 }
