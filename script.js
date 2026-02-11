@@ -10,16 +10,15 @@ fetch("/puthiyaparvai-web/news.json")
     // Get category from body
     const pageCategory = document.body.dataset.category;
 
-    // Filter data
+    // Filter
     let filteredData = data;
 
-    if (pageCategory && pageCategory.trim() !== "") {
+    if (pageCategory) {
       filteredData = data.filter(
         item => item.category === pageCategory
       );
     }
 
-    // Show news
     filteredData.forEach(news => {
 
       const div = document.createElement("div");
