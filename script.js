@@ -1,4 +1,4 @@
-fetch("/puthiyaparvai-web/news.json")
+fetch("/puthiyaparvai-web/news.json?v=" + Date.now())
   .then(res => res.json())
   .then(data => {
 
