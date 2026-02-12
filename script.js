@@ -3,7 +3,7 @@ fetch("/puthiyaparvai-web/news.json")
   .then(data => {
 
     const main = document.getElementById("news-container");
-    const breaking = document.getElementById("breaking-container");
+    const breaking = document.getElementById("breakingSlider");
 
     if (!main) return;
 
