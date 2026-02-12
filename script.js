@@ -1,25 +1,16 @@
-fetch("news.json")
+fetch("/puthiyaparvai-web/news.json")
   .then(res => res.json())
   .then(data => {
 
     const main = document.getElementById("news-container");
-    const breaking = document.getElementById("breakingSlider");
+    const breaking = document.getElementById("breaking-container");
 
     if (!main) return;
 
-    // Get category from body
-    const pageCategory = document.body.dataset.category;
+    main.innerHTML = "";
+    if (breaking) breaking.innerHTML = "";
 
-    // Filter
-    let filteredData = data;
-
-    if (pageCategory) {
-      filteredData = data.filter(
-        item => item.category === pageCategory
-      );
-    }
-
-    filteredData.forEach(news => {
+    data.forEach(news => {
 
       const div = document.createElement("div");
       div.className = "news-card";
@@ -27,7 +18,7 @@ fetch("news.json")
       div.innerHTML = `
         ${news.breaking ? '<span class="breaking">முக்கிய செய்தி</span>' : ''}
 
-        <img src="${news.image}" class="thumb" alt="${news.title}" />
+        <img src="${news.image}" class="thumb" alt="${news.title}">
 
         <h2>
           <a href="${news.link}">
