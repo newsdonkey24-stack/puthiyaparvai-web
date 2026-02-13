@@ -1,4 +1,4 @@
-fetch("/puthiyaparvai-web/news.json?v=" + Date.now())
+fetch("/puthiyaparvai-web/news.json?nocache=" + new Date().getTime())
   .then(res => res.json())
   .then(data => {
 
