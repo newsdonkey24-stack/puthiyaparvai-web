@@ -1,41 +1,46 @@
+// Load news.json with cache bypass
 fetch("/puthiyaparvai-web/news.json?nocache=" + new Date().getTime())
   .then(res => res.json())
   .then(data => {
 
+    // Containers
     const main = document.getElementById("news-container");
-    const breaking = document.getElementById("breaking-container");
+    const breaking = document.getElementById("breakingNews");
 
     if (!main) return;
 
+    // Clear old content
     main.innerHTML = "";
     if (breaking) breaking.innerHTML = "";
 
+    // ============================
+    // 🔴 BREAKING NEWS BAR
+    // ============================
+    data.forEach(news => {
+      if (news.breaking === true && breaking) {
+        breaking.innerHTML += " 🔴 " + news.title + " | ";
+      }
+    });
+
+    // ============================
+    // 📰 NORMAL NEWS LIST
+    // ============================
     data.forEach(news => {
 
       const div = document.createElement("div");
-      div.className = "news-card";
+      div.className = "news-item";
 
       div.innerHTML = `
-        ${news.breaking ? '<span class="breaking">முக்கிய செய்தி</span>' : ''}
-
-        <img src="${news.image}" class="thumb" alt="${news.title}">
-
-        <h2>
-          <a href="${news.link}">
-            ${news.title}
-          </a>
-        </h2>
-
-        <p>${news.summary}</p>
+        <a href="${news.link}">
+          <img src="${news.image}" alt="${news.title}">
+          <h2>${news.title}</h2>
+          <p>${news.summary}</p>
+        </a>
       `;
-
-      if (news.breaking && breaking) {
-        breaking.appendChild(div.cloneNode(true));
-      }
 
       main.appendChild(div);
 
     });
 
   })
-  .catch(err => console.log(err));
+  .catch(err => console.log("Error loading news:", err));
