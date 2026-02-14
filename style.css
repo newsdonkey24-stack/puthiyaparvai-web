@@ -148,3 +148,22 @@ p {
 .site-header h1 {
   text-shadow: 1px 1px 2px black;
 }
+/* Breaking News Ticker */
+.breaking-bar {
+  background: #b71c1c;
+  color: white;
+  padding: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.breaking-text {
+  display: inline-block;
+  animation: scroll-left 15s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
