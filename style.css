@@ -95,9 +95,16 @@ p {
 
 .site-header h1 {
   margin: 0;
-  font-size: 22px;
+  font-size: 36px;   /* Laptop size */
+  font-weight: bold;
+  text-shadow: 1px 1px 2px black;
 }
-
+/* Mobile view */
+@media (max-width: 768px) {
+  .site-header h1 {
+    font-size: 26px;
+  }
+}
 .news-item {
   background: #fff;
   margin: 12px;
