@@ -128,3 +128,11 @@ p {
   width: 100%;
   border-radius: 6px;
 }
+/* Force header text color fix */
+
+.site-header,
+.site-header h1,
+.site-header h2,
+.site-header a {
+  color: #ffffff !important;
+}
