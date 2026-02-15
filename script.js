@@ -37,9 +37,14 @@ const breakingText = document.getElementById("breakingNews");
 
 // ===== Breaking News Ticker =====
 
-const breakingText = document.getElementById("breakingNews");
+window.addEventListener("DOMContentLoaded", () => {
 
-if (breakingText) {
+  const breakingText = document.getElementById("breakingNews");
+
+  if (!breakingText) {
+    console.log("Breaking div not found");
+    return;
+  }
 
   fetch("/puthiyaparvai-web/news.json")
     .then(res => res.json())
@@ -65,4 +70,4 @@ if (breakingText) {
       breakingText.innerText = "🔴 செய்திகள் ஏற்றப்படவில்லை";
     });
 
-}
+});
