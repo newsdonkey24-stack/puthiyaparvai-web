@@ -30,13 +30,21 @@ fetch("/puthiyaparvai-web/news.json?nocache=" + new Date().getTime())
       const div = document.createElement("div");
       div.className = "news-item";
 
-      div.innerHTML = `
-        <a href="${news.link}">
-          <img src="${news.image}" alt="${news.title}">
-          <h2>${news.title}</h2>
-          <p>${news.summary}</p>
-        </a>
-      `;
+     div.innerHTML = `
+  <div class="news-card">
+    <a href="${news.link}">
+      <img src="${news.image}" alt="${news.title}" class="news-image">
+
+      <h2 class="news-title">${news.title}</h2>
+
+      <p class="news-summary">
+        ${news.summary}
+      </p>
+
+      <span class="read-more">முழு செய்தி</span>
+    </a>
+  </div>
+`;
 
       main.appendChild(div);
 
