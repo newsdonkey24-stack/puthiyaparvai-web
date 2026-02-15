@@ -243,3 +243,41 @@ p {
     transform: translateX(-100%);
   }
 }
+/* ===== GLOBAL TEXT FIX (DO NOT REMOVE) ===== */
+
+/* Main content */
+.news-item p,
+.news-page p,
+.news-summary,
+.container p {
+  font-size: 17px !important;
+  line-height: 1.7 !important;
+  color: #222 !important;
+}
+
+/* Titles */
+.news-item h2,
+.news-title,
+.news-page h1,
+.container h1 {
+  font-size: 22px !important;
+  line-height: 1.4 !important;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+
+  .news-item p,
+  .news-page p,
+  .news-summary,
+  .container p {
+    font-size: 18px !important;
+  }
+
+  .news-item h2,
+  .news-title,
+  .news-page h1,
+  .container h1 {
+    font-size: 24px !important;
+  }
+}
