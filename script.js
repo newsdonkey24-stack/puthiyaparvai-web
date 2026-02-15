@@ -35,24 +35,34 @@ fetch("/puthiyaparvai-web/news.json")
 
 const breakingText = document.getElementById("breakingNews");
 
+// ===== Breaking News Ticker =====
+
+const breakingText = document.getElementById("breakingNews");
+
 if (breakingText) {
-  fetch("news.json")
-  .then(res => res.json())
-  .then(data => {
 
-    let breakingNews = "";
+  fetch("/puthiyaparvai-web/news.json")
+    .then(res => res.json())
+    .then(data => {
 
-    data.forEach(news => {
-      if (news.breaking === true) {
-        breakingNews += " 🔴 " + news.title + " | ";
+      let breakingNews = "";
+
+      data.forEach(news => {
+        if (news.breaking === true) {
+          breakingNews += " 🔴 " + news.title + " | ";
+        }
+      });
+
+      if (breakingNews === "") {
+        breakingNews = "🔴 தற்போது முக்கிய செய்திகள் இல்லை";
       }
+
+      breakingText.innerText = breakingNews;
+
+    })
+    .catch(err => {
+      console.log("Breaking Error:", err);
+      breakingText.innerText = "🔴 செய்திகள் ஏற்றப்படவில்லை";
     });
 
-    if (breakingNews === "") {
-      breakingNews = "🔴 தற்போது பிரேக்கிங் செய்திகள் இல்லை";
-    }
-
-    breakingText.innerText = breakingNews;
-
-  })
-  .catch(err => console.log("Breaking Load Error:", err));
+}
