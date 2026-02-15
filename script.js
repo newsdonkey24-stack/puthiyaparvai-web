@@ -36,8 +36,23 @@ fetch("/puthiyaparvai-web/news.json")
 const breakingText = document.getElementById("breakingNews");
 
 if (breakingText) {
-  breakingText.innerText =
-    "🔴 முக்கிய செய்தி: புதிய பார்வை இணையதளம் தினமும் புதிய செய்திகளுடன் அப்டேட் செய்யப்படுகிறது | " +
-    "தமிழக அரசியல், மாவட்ட செய்திகள், விவசாயம், குற்றம், வேலைவாய்ப்பு செய்திகள் உடனுக்குடன் | " +
-    "www.puthiyaparvai.com";
-}
+  fetch("news.json")
+  .then(res => res.json())
+  .then(data => {
+
+    let breakingNews = "";
+
+    data.forEach(news => {
+      if (news.breaking === true) {
+        breakingNews += " 🔴 " + news.title + " | ";
+      }
+    });
+
+    if (breakingNews === "") {
+      breakingNews = "🔴 தற்போது பிரேக்கிங் செய்திகள் இல்லை";
+    }
+
+    breakingText.innerText = breakingNews;
+
+  })
+  .catch(err => console.log("Breaking Load Error:", err));
