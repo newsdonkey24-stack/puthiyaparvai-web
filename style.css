@@ -290,3 +290,33 @@ p {
   font-size: 18px;
 }
 }
+/* Share Buttons */
+.share-box {
+  margin-top: 25px;
+  padding: 15px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+.share-box p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.share-btn {
+  display: inline-block;
+  padding: 8px 15px;
+  margin: 5px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.share-btn.whatsapp {
+  background: #25D366;
+}
+
+.share-btn.facebook {
+  background: #1877F2;
+}
