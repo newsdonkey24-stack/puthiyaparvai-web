@@ -33,7 +33,7 @@
   "link": "/puthiyaparvai-web/news/lower-ganja-seizure.html",
   "category": "kutram",
   "breaking": true,
-  "date": "2026-02-19"
+  "date": "2026-02-18"
 },
  {
   "title": "திமுக அரசை கண்டித்து, கம்பம் ஒன்றிய அதிமுக சார்பில் கண்டன ஆர்ப்பாட்டம்",
@@ -42,7 +42,7 @@
   "link": "/puthiyaparvai-web/news/cumbum-admk-protest.html",
   "category": "arasiyal",
   "breaking": false,
- "date": "2026-02-19"
+ "date": "2026-02-18"
 },
 
      {
@@ -52,7 +52,7 @@
   "link": "/puthiyaparvai-web/news/cumbum-strike-kerala-border.html",
   "category": "arasiyal",
   "breaking": false,
- "date": "2026-02-19"
+ "date": "2026-02-17"
 },
   {
   "title": " கம்பத்தில் பல ஆண்டுகளாக ஆக்கிரமித்து கட்டப்பட்டிருந்த வீடுகள் இடித்து அகற்றம்",
@@ -61,7 +61,7 @@
   "link": "/puthiyaparvai-web/news/file-name.html",
   "category": "maavattam",
   "breaking": false,
- "date": "2026-02-19"
+ "date": "2026-02-17"
 },
 
   {
@@ -71,7 +71,7 @@
   "link": "/puthiyaparvai-web/news/sdpi-18th-anniversary-uthamapalayam.html",
   "category": "arasiyal",
   "breaking": false,
- "date": "2026-02-19"
+ "date": "2026-02-16"
 },
   {
   "title": "சட்டமன்றத் தேர்தலில் எந்த கட்சியோடு கூட்டணி அமைத்தாலும் கம்பம் தொகுதியில் போட்டியிடுவேன் - ஜெகநாத் மிஸ்ரா",
@@ -80,7 +80,7 @@
   "link": "/puthiyaparvai-web/news/misra-election-cumbum.html",
   "breaking": false,
   "category": "arasiyal"
-   "date": "2026-02-19"
+   "date": "2026-02-15"
 },
   {
   "title": "லோயர் - குமுளி மலைச்சாலையில் பிளாஸ்டிக் கழிவுகள் அகற்றம்",
@@ -89,7 +89,7 @@
   "link": "/puthiyaparvai-web/news/lower-kumuli-plastic-cleaning.html",
   "breaking": false,
     "category": "maavattam"
-   "date": "2026-02-19"
+   "date": "2026-02-14"
 },
   {
     "title": "தேசிய தொழுநோய் விழிப்புணர்வு முகாம்",
@@ -97,6 +97,7 @@
     "image": "/puthiyaparvai-web/images/news/leprosy-camp-kambam.jpeg",
     "link": "/puthiyaparvai-web/news/national-leprosy-awareness-camp.html",
     "breaking": false,
+    "date": "2026-02-14"
   },
   {
     "title": "பெரியாறு அணை வெடிகுண்டு மிரட்டல்",
@@ -104,7 +105,7 @@
     "image": "/puthiyaparvai-web/images/news/idukki-police.jpeg",
     "link": "/puthiyaparvai-web/news/periyar-idukki-bomb-threat.html",
     "breaking": false,
-   "date": "2026-02-19"
+   "date": "2026-02-13"
   },
 {
   "title": "டெஸ்ட் செய்தி - Auto System வேலை செய்கிறது",
@@ -112,7 +113,7 @@
   "image": "/puthiyaparvai-web/images/news/test.jpg",
   "link": "/puthiyaparvai-web/news/test-news.html",
   "breaking": false
- "date": "2026-02-19"
+ "date": "2026-02-13"
 },
 {
   "title": "கம்பத்தில் புதிய ஆம்னி பஸ் நிலையம், புதிய வணிக வளாகம் திறப்பு",
@@ -120,7 +121,7 @@
   "image": "/puthiyaparvai-web/image/kambam-bus-stand.jpeg",
   "link": "/puthiyaparvai-web/news/kambam-new-bus-stand.html",
   "breaking": false,
- "date": "2026-02-19"
+ "date": "2026-02-13"
 },
   {
   "title": "கம்பம் அரசு மருத்துவமனையில் அவசர பேறுகால சிகிச்சை மையம் திறப்பு விழா",
@@ -128,7 +129,7 @@
   "image": "/puthiyaparvai-web/images/news/kambam-hospital-opening.jpeg",
   "link": "/puthiyaparvai-web/news/kambam-hospital-opening.html",
   "breaking": false,
-   "date": "2026-02-19"
+   "date": "2026-02-12"
 },
   {
   "title": "கம்பம் ஸ்ரீ கம்பராய பெருமாள் கோவிலில் மூத்த தம்பதியருக்கு சிறப்பு செய்யும் நிகழ்ச்சி: கம்பம் எம் எல் ஏ பங்கேற்பு",
@@ -137,6 +138,6 @@
   "link": "/puthiyaparvai-web/news/cumbum-kovil-mla-special-couples.html",
   "category": "arasiyal",
   "breaking": false,
- "date": "2026-02-19"
+ "date": "2026-02-12"
 }
 ]
