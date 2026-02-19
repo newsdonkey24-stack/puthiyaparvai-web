@@ -282,7 +282,11 @@ p {
   }
 }
 .site-subtitle {
-    color: #ffcc00;   /* Gold color */
-    font-weight: bold;
-    font-size: 18px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #ffcc00; /* Gold */
+  font-weight: bold;
+  font-size: 18px;
+}
 }
