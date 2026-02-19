@@ -5,7 +5,7 @@
   "image": "/puthiyaparvai-web/images/news/cumbum-vaver-ramzan.jpeg",
   "link": "/puthiyaparvai-web/news/cumbum-vaver-ramzan.html",
   "category": "maavattam",
-  "breaking": false,
+  "breaking": true,
   "date": "2026-02-19"
 },
  {
@@ -41,7 +41,7 @@
   "image": "/puthiyaparvai-web/images/news/cumbum-admk.jpeg",
   "link": "/puthiyaparvai-web/news/cumbum-admk-protest.html",
   "category": "arasiyal",
-  "breaking": true,
+  "breaking": false,
   "date": "2026-02-13"
 },
 
@@ -51,7 +51,7 @@
   "image": "/puthiyaparvai-web/images/news/cumbum-strike.jpeg",
   "link": "/puthiyaparvai-web/news/cumbum-strike-kerala-border.html",
   "category": "arasiyal",
-  "breaking": true,
+  "breaking": false,
   "date": "2026-02-12"
 },
   {
@@ -86,7 +86,7 @@
   "summary": "லோயர் - குமுளி மலைச்சாலையில் வனத்துறையினர் மற்றும் பள்ளி மாணவர்கள் இணைந்து பிளாஸ்டிக் கழிவுகளை அகற்றினர்.",
   "image": "/puthiyaparvai-web/images/news/gdr-forest.jpeg",
   "link": "/puthiyaparvai-web/news/lower-kumuli-plastic-cleaning.html",
-  "breaking": true,
+  "breaking": false,
     "category": "maavattam"
 },
   {
@@ -94,14 +94,14 @@
     "summary": "கம்பத்தில் நடைபெற்ற தேசிய தொழுநோய் விழிப்புணர்வு முகாம் பொதுமக்களிடையே விழிப்புணர்வை ஏற்படுத்தியது.",
     "image": "/puthiyaparvai-web/images/news/leprosy-camp-kambam.jpeg",
     "link": "/puthiyaparvai-web/news/national-leprosy-awareness-camp.html",
-    "breaking": false
+    "breaking": false,
   },
   {
     "title": "பெரியாறு அணை வெடிகுண்டு மிரட்டல்",
     "summary": "பெரியாறு அணைக்கு வந்த மிரட்டலை தொடர்ந்து போலீசார் தீவிர விசாரணை மேற்கொண்டு வருகின்றனர்.",
     "image": "/puthiyaparvai-web/images/news/idukki-police.jpeg",
     "link": "/puthiyaparvai-web/news/periyar-idukki-bomb-threat.html",
-    "breaking": false
+    "breaking": false,
   },
 {
   "title": "டெஸ்ட் செய்தி - Auto System வேலை செய்கிறது",
@@ -115,14 +115,14 @@
   "summary": "கம்பத்தில் ரூ.2.65 கோடி மதிப்பில் ஆம்னி பஸ் நிலையமும், ரூ.1.78 கோடி மதிப்பில் வணிக வளாகமும் முதல்வர் மு.க.ஸ்டாலின் காணொலி மூலம் திறந்து வைத்தார்.",
   "image": "/puthiyaparvai-web/image/kambam-bus-stand.jpeg",
   "link": "/puthiyaparvai-web/news/kambam-new-bus-stand.html",
-  "breaking": true
+  "breaking": false,
 },
   {
   "title": "கம்பம் அரசு மருத்துவமனையில் அவசர பேறுகால சிகிச்சை மையம் திறப்பு விழா",
   "summary": "கம்பம் அரசு மருத்துவமனையில் ரூ.10 கோடி செலவில் கட்டப்பட்ட ஒருங்கிணைந்த அவசர பேறுகால மற்றும் பச்சிளங்குழந்தைகளுக்கான தீவிர சிகிச்சை மையம் திறப்பு.",
   "image": "/puthiyaparvai-web/images/news/kambam-hospital-opening.jpeg",
   "link": "/puthiyaparvai-web/news/kambam-hospital-opening.html",
-  "breaking": true
+  "breaking": false,
 },
   {
   "title": "கம்பம் ஸ்ரீ கம்பராய பெருமாள் கோவிலில் மூத்த தம்பதியருக்கு சிறப்பு செய்யும் நிகழ்ச்சி: கம்பம் எம் எல் ஏ பங்கேற்பு",
