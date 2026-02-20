@@ -77,8 +77,8 @@
   "image": "/puthiyaparvai-web/images/news/misra-news-cumbum.jpeg",
   "link": "/puthiyaparvai-web/news/misra-election-cumbum.html",
   "breaking": false,
-  "category": "arasiyal"
-   "date": "2026-02-15"
+  "category": "arasiyal",
+  "date": "2026-02-15"
 },
  {
   "title": "லோயர் - குமுளி மலைச்சாலையில் பிளாஸ்டிக் கழிவுகள் அகற்றம்",
@@ -86,8 +86,8 @@
   "image": "/puthiyaparvai-web/images/news/gdr-forest.jpeg",
   "link": "/puthiyaparvai-web/news/lower-kumuli-plastic-cleaning.html",
   "breaking": false,
-    "category": "maavattam"
-   "date": "2026-02-14"
+    "category": "maavattam",
+  "date": "2026-02-14"
 },
  {
     "title": "தேசிய தொழுநோய் விழிப்புணர்வு முகாம்",
@@ -110,8 +110,8 @@
   "summary": "இந்த செய்தி auto homepage system மூலம் தானாக வந்துள்ளது.",
   "image": "/puthiyaparvai-web/images/news/test.jpg",
   "link": "/puthiyaparvai-web/news/test-news.html",
-  "breaking": false
- "date": "2026-02-13"
+  "breaking": false,
+  "date": "2026-02-13"
 },
  {
   "title": "கம்பத்தில் புதிய ஆம்னி பஸ் நிலையம், புதிய வணிக வளாகம் திறப்பு",
