@@ -175,7 +175,31 @@
 
   </div>
 
+<!-- Share Buttons -->
+<div class="share-box">
 
+  <p class="share-title">📢 இந்த செய்தியை பகிருங்கள்</p>
+
+  <a id="waShare" target="_blank" class="share-btn whatsapp">
+    📲 WhatsApp
+  </a>
+
+  <a id="fbShare" target="_blank" class="share-btn facebook">
+    📘 Facebook
+  </a>
+
+</div>
+
+<script>
+  const pageUrl = encodeURIComponent(window.location.href);
+  const pageTitle = encodeURIComponent(document.title);
+
+  document.getElementById("waShare").href =
+    "https://wa.me/?text=" + pageTitle + "%0A" + pageUrl;
+
+  document.getElementById("fbShare").href =
+    "https://www.facebook.com/sharer/sharer.php?u=" + pageUrl;
+</script>
   <a href="../index.html" class="back-btn">⬅️ முகப்புக்கு திரும்ப</a>
 
 </div>
