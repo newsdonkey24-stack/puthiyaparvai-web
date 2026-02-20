@@ -1,4 +1,4 @@
-fetch("/puthiyaparvai-web/news.json")
+fetch("/puthiyaparvai-web/news.json?v=" + new Date().getTime())
   .then(res => res.json())
   .then(data => {
 
@@ -46,7 +46,7 @@ window.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  fetch("/puthiyaparvai-web/news.json")
+  fetch("/puthiyaparvai-web/news.json?v=" + new Date().getTime())
     .then(res => res.json())
     .then(data => {
 
