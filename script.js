@@ -12,14 +12,13 @@ fetch('./news.json?v=' + new Date().getTime())
       const div = document.createElement("div");
       div.className = "news-item";
 
-      div.innerHTML = `
-        <a href="news/news.html?id=${news.id}">
-          <img src="${news.image}" style="width:100%;max-height:250px;object-fit:cover;">
-          <h3>${news.title}</h3>
-        </a>
-        <p>${news.summary}</p>
-        <hr>
-      `;
+    div.innerHTML = `
+<a href="news/news.html?id=${news.id}">
+<img src="${news.image}" style="width:100%;height:auto;display:block;">
+<h3>${news.title}</h3>
+</a>
+<p>${news.summary}</p>
+`;
 
       container.appendChild(div);
 
