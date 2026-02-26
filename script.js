@@ -19,7 +19,7 @@ fetch("/puthiyaparvai-web/news.json?v=" + new Date().getTime())
       div.className = "news-item";
 
       div.innerHTML = `
-        <a href="${news.link}">
+       <a href="news/news.html?id=${news.id}">
           <img src="${news.image}" alt="${news.title}">
           <h2>${news.title}</h2>
           <p>${news.summary}</p>
