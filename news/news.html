@@ -3,117 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>புதிய பார்வை | தமிழ் செய்திகள்</title>
-
-<meta id="metaDesc" name="description" content="">
-<meta property="og:type" content="article">
-<meta id="ogTitle" property="og:title" content="">
-<meta id="ogDesc" property="og:description" content="">
-<meta id="ogImage" property="og:image" content="">
-<meta id="ogUrl" property="og:url" content="">
-
-<meta name="twitter:card" content="summary_large_image">
-
-<style>
-body{font-family:Latha,"Noto Sans Tamil";margin:0;background:#f4f4f4;}
-.site-header{background:#b71c1c;color:#fff;text-align:center;padding:15px;}
-.site-header h1{margin:0;font-size:28px;}
-.site-header h2{margin:0;font-size:16px;color:#ffd54f;}
-.news-page{max-width:900px;margin:20px auto;background:#fff;padding:20px;border-radius:8px;}
-.article-meta span{margin-right:15px;font-size:14px;color:#555;}
-.news-image{width:100%;border-radius:8px;margin:15px 0;}
-.news-content p{line-height:1.8;font-size:17px;text-align:justify;}
-.share-box{text-align:center;margin-top:30px;}
-.share-btn{display:inline-block;padding:10px 15px;margin:5px;border-radius:5px;color:#fff;text-decoration:none;}
-.whatsapp{background:#25D366;}
-.facebook{background:#1877f2;}
-.back{background:#444;}
-</style>
-
+<link rel="stylesheet" href="../style.css">
 </head>
-
 <body>
 
-<div class="site-header">
 <h1>புதிய பார்வை</h1>
 <h2>தமிழ் செய்திகள்</h2>
-</div>
 
-<div class="news-page">
+<div id="news-content"></div>
 
-<h1 id="newsTitle"></h1>
-
-<div class="article-meta">
-<span id="newsPlace"></span>
-<span id="newsDate"></span>
-<span id="newsReporter"></span>
-<span id="viewCount"></span>
-</div>
-
-<img id="newsImage" class="news-image">
-
-<div class="news-content" id="newsContent"></div>
-
-<div class="share-box">
-<p><b>இந்த செய்தியை பகிரவும்</b></p>
-<a id="waShare" class="share-btn whatsapp" target="_blank">WhatsApp</a>
-<a id="fbShare" class="share-btn facebook" target="_blank">Facebook</a>
-<a href="../index.html" class="share-btn back">← முகப்பு</a>
-</div>
-
-</div>
+<a href="../index.html">முகப்புக்கு திரும்ப</a>
 
 <script>
-
 const params = new URLSearchParams(window.location.search);
-const newsId = params.get("id");
+const id = params.get("id");
 
-fetch("../news.json")
-.then(res=>res.json())
-.then(data=>{
-
-const news = data.find(n=>n.id===newsId);
-
-if(!news){
-document.getElementById("newsTitle").innerText="செய்தி கிடைக்கவில்லை";
-return;
-}
-
-document.getElementById("newsTitle").innerText=news.title;
-document.getElementById("newsPlace").innerText="📍 "+news.place;
-document.getElementById("newsDate").innerText="📅 "+news.date;
-document.getElementById("newsReporter").innerText="✍️ "+news.reporter;
-document.getElementById("newsImage").src="../"+news.image;
-document.getElementById("newsContent").innerHTML=news.content;
-
-/* Meta Update */
-document.title=news.title+" | புதிய பார்வை";
-document.getElementById("metaDesc").content=news.summary;
-document.getElementById("ogTitle").content=news.title+" | புதிய பார்வை";
-document.getElementById("ogDesc").content=news.summary;
-document.getElementById("ogImage").content=window.location.origin+"/"+news.image;
-document.getElementById("ogUrl").content=window.location.href;
-
-/* View Counter */
-let key="views_"+news.id;
-let views=localStorage.getItem(key);
-if(!views){views=1;} else{views=parseInt(views)+1;}
-localStorage.setItem(key,views);
-document.getElementById("viewCount").innerText="👁️ "+views+" Views";
-
-/* Share */
-let url=encodeURIComponent(window.location.href);
-let title=encodeURIComponent(news.title);
-
-document.getElementById("waShare").href=
-"https://wa.me/?text="+title+"%0A"+url;
-
-document.getElementById("fbShare").href=
-"https://www.facebook.com/sharer/sharer.php?u="+url;
-
-});
-
+fetch('../news.json')
+  .then(res => res.json())
+  .then(data => {
+    const news = data.find(n => n.id === id);
+    if(news){
+      document.getElementById("news-content").innerHTML = `
+        <h2>${news.title}</h2>
+        <img src="../${news.image}" width="100%">
+        <p>${news.content}</p>
+      `;
+      document.title = news.title + " | புதிய பார்வை";
+    }
+  });
 </script>
 
 </body>
