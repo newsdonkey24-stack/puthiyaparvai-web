@@ -1,73 +1,16 @@
-fetch("/puthiyaparvai-web/news.json?v=" + new Date().getTime())
-  .then(res => res.json())
+fetch('news.json')
+  .then(response => response.json())
   .then(data => {
-
     const container = document.getElementById("news-container");
-    if (!container) return;
-
-    // Body-ல இருந்து category எடு
-    const category = document.body.dataset.category;
-
-    // Filter
-    const filtered = category
-      ? data.filter(n => n.category === category)
-      : data;
-
-    filtered.forEach(news => {
-
-      const div = document.createElement("div");
-      div.className = "news-item";
-
-      div.innerHTML = `
-       <a href="news/news.html?id=${news.id}">
-          <img src="${news.image}" alt="${news.title}">
-          <h2>${news.title}</h2>
+    data.reverse().forEach(news => {
+      container.innerHTML += `
+        <div class="news-card">
+          <a href="news/news.html?id=${news.id}">
+            <img src="${news.image}" alt="${news.title}">
+            <h3>${news.title}</h3>
+          </a>
           <p>${news.summary}</p>
-        </a>
+        </div>
       `;
-
-      container.appendChild(div);
     });
-
-  })
-  .catch(err => console.log("Error:", err));
-// ===== Breaking News Ticker =====
-
-const breakingText = document.getElementById("breakingNews");
-
-// ===== Breaking News Ticker =====
-
-window.addEventListener("DOMContentLoaded", () => {
-
-  const breakingText = document.getElementById("breakingNews");
-
-  if (!breakingText) {
-    console.log("Breaking div not found");
-    return;
-  }
-
-  fetch("/puthiyaparvai-web/news.json?v=" + new Date().getTime())
-    .then(res => res.json())
-    .then(data => {
-
-      let breakingNews = "";
-
-      data.forEach(news => {
-        if (news.breaking === true) {
-          breakingNews += " 🔴 " + news.title + " | ";
-        }
-      });
-
-      if (breakingNews === "") {
-        breakingNews = "🔴 தற்போது முக்கிய செய்திகள் இல்லை";
-      }
-
-      breakingText.innerText = breakingNews;
-
-    })
-    .catch(err => {
-      console.log("Breaking Error:", err);
-      breakingText.innerText = "🔴 செய்திகள் ஏற்றப்படவில்லை";
-    });
-
-});
+  });
