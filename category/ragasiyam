@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <title>ரகசியம்</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body data-category="ragasiyam">
+
+<header class="site-header">
+  <h1>ரகசியம் செய்திகள்</h1>
+</header>
+
+<div class="container" id="news-container"></div>
+
+<script src="../script.js"></script>
+
+</body>
+</html>
