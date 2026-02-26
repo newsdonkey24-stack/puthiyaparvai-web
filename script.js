@@ -7,7 +7,7 @@ fetch('./news.json?v=' + new Date().getTime())
 
     container.innerHTML = "";
 
-    data.slice().reverse().forEach(news => {
+    data.for Each(news => {
 
       const div = document.createElement("div");
       div.className = "news-item";
