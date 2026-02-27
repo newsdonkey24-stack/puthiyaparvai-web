@@ -1,31 +1,4 @@
-<script>
-
-window.onload = function(){
-
-const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
-
-fetch("https://newsdonkey24-stack.github.io/puthiyaparvai-web/news.json")
-.then(res => res.json())
-.then(data => {
-
-    if(!id){
-        document.getElementById("content").innerHTML = "<h3>ID இல்லை</h3>";
-        return;
-    }
-
-    const news = data.find(n => n.id && n.id === id);
-
-    if(!news){
-        document.getElementById("content").innerHTML = "<h3>செய்தி கிடைக்கவில்லை</h3>";
-        return;
-    }
-
-    document.getElementById("title").innerText = news.title || "";
-    document.getElementById("date").innerText = news.date || "";
-    document.getElementById("category").innerText = news.category || "";
-    document.getElementBy…
-[10:39 PM, 2/27/2026] viji Cumbum 👍: <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ta">
 <head>
 <meta charset="UTF-8">
@@ -33,64 +6,17 @@ fetch("https://newsdonkey24-stack.github.io/puthiyaparvai-web/news.json")
 <title>புதிய பார்வை</title>
 
 <style>
-body{
-    font-family: Noto Sans Tamil, sans-serif;
-    margin:0;
-    background:#f4f4f4;
-}
-
-header{
-    background:#c40000;
-    color:#fff;
-    text-align:center;
-    padding:20px;
-}
-
-.container{
-    max-width:900px;
-    margin:auto;
-    background:#fff;
-    padding:20px;
-}
-
-img{
-    width:100%;
-    height:auto;
-    margin-bottom:15px;
-}
-
-#content p{
-    line-height:1.8;
-    font-size:18px;
-    margin-bottom:18px;
-    text-align:justify;
-}
-
-.meta{
-    color:#777;
-    margin-bottom:15px;
-    font-size:14px;
-}
-
-button{
-    padding:10px 15px;
-    margin-right:10px;
-    border:none;
-    color:#fff;
-    cursor:pointer;
-}
-
+body{font-family:Noto Sans Tamil,sans-serif;margin:0;background:#f4f4f4;}
+header{background:#c40000;color:#fff;text-align:center;padding:20px;}
+.container{max-width:900px;margin:auto;background:#fff;padding:20px;}
+img{width:100%;height:auto;margin-bottom:15px;}
+#content p{line-height:1.8;font-size:18px;margin-bottom:18px;text-align:justify;}
+.meta{color:#777;margin-bottom:15px;font-size:14px;}
+button{padding:10px 15px;margin-right:10px;border:none;color:#fff;cursor:pointer;}
 .fb{background:#1877f2;}
 .wa{background:#25d366;}
 .home{background:#444;}
-
-footer{
-    text-align:center;
-    padding:20px;
-    background:#222;
-    color:#fff;
-    margin-top:40px;
-}
+footer{text-align:center;padding:20px;background:#222;color:#fff;margin-top:40px;}
 </style>
 </head>
 
@@ -102,7 +28,6 @@ footer{
 </header>
 
 <div class="container">
-
 <h2 id="title"></h2>
 
 <div class="meta">
@@ -112,67 +37,58 @@ footer{
 </div>
 
 <img id="image">
-
 <div id="content"></div>
-
 <br>
+
 <button class="fb" onclick="shareFB()">Facebook</button>
 <button class="wa" onclick="shareWA()">WhatsApp</button>
 <button class="home" onclick="goHome()">முகப்புக்கு திரும்ப</button>
 
 </div>
 
-<footer>
-© 2026 புதிய பார்வை
-</footer>
+<footer>© 2026 புதிய பார்வை</footer>
 
 <script>
+window.onload=function(){
 
-window.onload = function(){
-
-const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
+const params=new URLSearchParams(window.location.search);
+const id=params.get("id");
 
 if(!id){
-    document.getElementById("content").innerHTML = "<h3>ID இல்லை</h3>";
-    return;
+document.getElementById("content").innerHTML="<h3>ID இல்லை</h3>";
+return;
 }
 
 fetch("https://newsdonkey24-stack.github.io/puthiyaparvai-web/news.json")
-.then(res => res.json())
-.then(data => {
+.then(res=>res.json())
+.then(data=>{
 
-    const news = data.find(n => n.id === id);
+const news=data.find(n=>n.id===id);
 
-    if(!news){
-        document.getElementById("content").innerHTML = "<h3>செய்தி கிடைக்கவில்லை</h3>";
-        return;
-    }
+if(!news){
+document.getElementById("content").innerHTML="<h3>செய்தி கிடைக்கவில்லை</h3>";
+return;
+}
 
-    document.getElementById("title").innerText = news.title;
-    document.getElementById("date").innerText = news.date;
-    document.getElementById("category").innerText = news.category;
-    document.getElementById("image").src = news.image;
+document.getElementById("title").innerText=news.title;
+document.getElementById("date").innerText=news.date;
+document.getElementById("category").innerText=news.category;
+document.getElementById("image").src=news.image;
 
-    let views = localStorage.getItem(id) || 0;
-    views++;
-    localStorage.setItem(id, views);
-    document.getElementById("views").innerText = views;
+let views=localStorage.getItem(id)||0;
+views++;
+localStorage.setItem(id,views);
+document.getElementById("views").innerText=views;
 
-    const paragraphs = news.content.split("\n");
-    let html = "";
-
-    paragraphs.forEach(p=>{
-        if(p.trim() !== ""){
-            html += "<p>"+p+"</p>";
-        }
-    });
-
-    document.getElementById("content").innerHTML = html;
+let html="";
+news.content.split("\n").forEach(p=>{
+if(p.trim()!==""){html+="<p>"+p+"</p>";}
+});
+document.getElementById("content").innerHTML=html;
 
 })
 .catch(()=>{
-    document.getElementById("content").innerHTML = "<h3>Load error</h3>";
+document.getElementById("content").innerHTML="<h3>Error loading news</h3>";
 });
 
 };
@@ -180,15 +96,12 @@ fetch("https://newsdonkey24-stack.github.io/puthiyaparvai-web/news.json")
 function shareFB(){
 window.open("https://www.facebook.com/sharer/sharer.php?u="+window.location.href);
 }
-
 function shareWA(){
 window.open("https://api.whatsapp.com/send?text="+document.title+" "+window.location.href);
 }
-
 function goHome(){
 window.location.href="../index.html";
 }
-
 </script>
 
 </body>
