@@ -78,8 +78,17 @@ fetch("../news.json")
   let views = localStorage.getItem(id) || 0;
   views++;
   localStorage.setItem(id, views);
-  document.getElementById("views").innerText = views;
+  const paragraphs = news.content.split("\n");
+
+let formattedContent = "";
+
+paragraphs.forEach(p => {
+    if(p.trim() !== ""){
+        formattedContent += <p>${p}</p>;
+    }
 });
+
+document.getElementById("content").innerHTML = formattedContent;
 
 function shareFB(){
   window.open("https://www.facebook.com/sharer/sharer.php?u="+window.location.href);
