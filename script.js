@@ -1,30 +1,29 @@
-fetch('./news.json?v=' + new Date().getTime())
-  .then(response => response.json())
-  .then(data => {
+fetch('news.json?v=' + new Date().getTime())
+.then(response => response.json())
+.then(data => {
 
     const container = document.getElementById("news-container");
     if (!container) return;
 
     container.innerHTML = "";
 
-    data.for Each(news => {
+    data.forEach(news => {
 
-      const div = document.createElement("div");
-      div.className = "news-item";
+        const div = document.createElement("div");
+        div.className = "news-item";
 
-    div.innerHTML = `
-<a href="news/news.html?id=${news.id}">
-<img src="${news.image}" style="width:100%;height:auto;display:block;">
-<h3>${news.title}</h3>
-</a>
-<p>${news.summary}</p>
-`;
+        div.innerHTML = `
+        <a href="news/news.html?id=${news.id}">
+        <img src="${news.image}" style="width:100%;height:auto;display:block;">
+        <h3>${news.title}</h3>
+        </a>
+        <p>${news.summary}</p>
+        `;
 
-      container.appendChild(div);
-
+        container.appendChild(div);
     });
 
-  })
-  .catch(error => {
+})
+.catch(error => {
     console.error("News loading error:", error);
-  });
+});
