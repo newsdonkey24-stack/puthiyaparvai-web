@@ -84,8 +84,6 @@ fetch("../news.json")
   document.getElementById("date").innerText = news.date;
   document.getElementById("category").innerText = news.category;
   document.getElementById("image").src = "../" + news.image;
-  document.getElementById("content").innerText = news.content;
-
   // View Counter
   let views = localStorage.getItem(id) || 0;
   views++;
