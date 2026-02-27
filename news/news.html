@@ -1,74 +1,6 @@
-<!DOCTYPE html>
-<html lang="ta">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>புதிய பார்வை</title>
-
-<style>
-  #content p{
-    line-height: 1.8;
-    font-size: 18px;
-    margin-bottom: 18px;
-    text-align: justify;
-}
-
-.meta{
-    color:#777;
-    margin-bottom:15px;
-    font-size:14px;
-}
-body{font-family:'Noto Sans Tamil',sans-serif;margin:0;background:#f4f4f4;}
-header{background:#c40000;color:#fff;text-align:center;padding:20px;}
-header h1{margin:0;}
-header p{margin:5px 0 0;font-size:18px;}
-.container{max-width:900px;margin:auto;background:#fff;padding:20px;}
-img{width:100%;height:auto;margin-bottom:15px;}
-.meta{color:gray;margin-bottom:15px;}
-.share{margin-top:30px;}
-button{padding:10px 15px;margin-right:10px;border:none;color:#fff;cursor:pointer;}
-.fb{background:#1877f2;}
-.wa{background:#25d366;}
-.home{background:#444;}
-footer{text-align:center;padding:20px;background:#222;color:#fff;margin-top:40px;}
-</style>
-
-</head>
-<body>
-
-<header>
-<h1>புதிய பார்வை</h1>
-<p>தமிழ் செய்திகள்</p>
-</header>
-
-<div class="container">
-
-<h2 id="title"></h2>
-
-<div class="meta">
-<span id="date"></span> |
-கேட்டகிரி: <span id="category"></span> |
-👁️ பார்வைகள்: <span id="views">0</span>
-</div>
-
-<img id="image">
-
-<div id="content"></div>
-
-<div class="share">
-<button class="fb" onclick="shareFB()">Facebook</button>
-<button class="wa" onclick="shareWA()">WhatsApp</button>
-<button class="home" onclick="goHome()">முகப்புக்கு திரும்ப</button>
-</div>
-
-</div>
-
-<footer>
-© 2026 புதிய பார்வை
-</footer>
-
 <script>
+
+window.onload = function(){
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
@@ -78,45 +10,43 @@ fetch("https://newsdonkey24-stack.github.io/puthiyaparvai-web/news.json")
 .then(data => {
 
     if(!id){
-        document.getElementById("content").innerHTML = "<h3>ID கிடைக்கவில்லை</h3>";
+        document.getElementById("content").innerHTML = "<h3>ID இல்லை</h3>";
         return;
     }
 
-    const news = data.find(n => n.id && n.id.trim() === id.trim());
+    const news = data.find(n => n.id && n.id === id);
 
     if(!news){
         document.getElementById("content").innerHTML = "<h3>செய்தி கிடைக்கவில்லை</h3>";
         return;
     }
 
-    document.getElementById("title").innerText = news.title;
-    document.getElementById("date").innerText = news.date;
-    document.getElementById("category").innerText = news.category;
-    document.getElementById("image").src = "../" + news.image;
+    document.getElementById("title").innerText = news.title || "";
+    document.getElementById("date").innerText = news.date || "";
+    document.getElementById("category").innerText = news.category || "";
+    document.getElementById("image").src = news.image || "";
 
-    // View Counter
     let views = localStorage.getItem(id) || 0;
     views++;
     localStorage.setItem(id, views);
     document.getElementById("views").innerText = views;
 
-    const paragraphs = news.content.split("\n");
-    let formattedContent = "";
-
-    paragraphs.forEach(p => {
-        if(p.trim() !== ""){
-            formattedContent += <p>${p}</p>;
-        }
-    });
-
-    document.getElementById("content").innerHTML = formattedContent;
+    if(news.content){
+        const paragraphs = news.content.split("\n");
+        let html = "";
+        paragraphs.forEach(p=>{
+            if(p.trim() !== ""){
+                html += "<p>"+p+"</p>";
+            }
+        });
+        document.getElementById("content").innerHTML = html;
+    }
 
 })
-.catch(error => {
-    document.getElementById("content").innerHTML = "<h3>தகவல் ஏற்ற முடியவில்லை</h3>";
+.catch(err=>{
+    document.getElementById("content").innerHTML = "<h3>Error loading news</h3>";
 });
 
-</script>
+};
 
-</body>
-</html>
+</script>
