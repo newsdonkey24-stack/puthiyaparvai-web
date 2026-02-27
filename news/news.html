@@ -75,8 +75,11 @@ const id = params.get("id");
 fetch("../news.json")
 .then(res=>res.json())
 .then(data=>{
-  const news = data.find(n=>n.id===id);
-  if(!news) return;
+ const news = data.find(n => n.id && n.id === id);
+  if(!news){
+   document.getElementById("content").innerHTML = "<h3>செய்தி கிடைக்கவில்லை</h3>";
+   return;
+}
 
   document.title = news.title + " | புதிய பார்வை";
 
