@@ -84,11 +84,13 @@ fetch("../news.json")
   document.getElementById("date").innerText = news.date;
   document.getElementById("category").innerText = news.category;
   document.getElementById("image").src = "../" + news.image;
-  // View Counter
-  let views = localStorage.getItem(id) || 0;
-  views++;
-  localStorage.setItem(id, views);
-  const paragraphs = news.content.split("\n");
+ // View Counter
+let views = localStorage.getItem(id) || 0;
+views++;
+localStorage.setItem(id, views);
+document.getElementById("views").innerText = views;
+
+const paragraphs = news.content.split("\n");
 
 let formattedContent = "";
 
