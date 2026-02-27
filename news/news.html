@@ -69,51 +69,53 @@ footer{text-align:center;padding:20px;background:#222;color:#fff;margin-top:40px
 </footer>
 
 <script>
+
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
-fetch("../news.json")
-.then(res=>res.json())
-.then(data=>{
- const news = data.find(n => n.id && n.id === id);
-  if(!news){
-   document.getElementById("content").innerHTML = "<h3>செய்தி கிடைக்கவில்லை</h3>";
-   return;
-}
+fetch("https://newsdonkey24-stack.github.io/puthiyaparvai-web/news.json")
+.then(res => res.json())
+.then(data => {
 
-  document.title = news.title + " | புதிய பார்வை";
-
-  document.getElementById("title").innerText = news.title;
-  document.getElementById("date").innerText = news.date;
-  document.getElementById("category").innerText = news.category;
-  document.getElementById("image").src = "../" + news.image;
- // View Counter
-let views = localStorage.getItem(id) || 0;
-views++;
-localStorage.setItem(id, views);
-document.getElementById("views").innerText = views;
-
-const paragraphs = news.content.split("\n");
-
-let formattedContent = "";
-
-paragraphs.forEach(p => {
-    if(p.trim() !== ""){
-        formattedContent += <p>${p}</p>;
+    if(!id){
+        document.getElementById("content").innerHTML = "<h3>ID கிடைக்கவில்லை</h3>";
+        return;
     }
+
+    const news = data.find(n => n.id && n.id.trim() === id.trim());
+
+    if(!news){
+        document.getElementById("content").innerHTML = "<h3>செய்தி கிடைக்கவில்லை</h3>";
+        return;
+    }
+
+    document.getElementById("title").innerText = news.title;
+    document.getElementById("date").innerText = news.date;
+    document.getElementById("category").innerText = news.category;
+    document.getElementById("image").src = "../" + news.image;
+
+    // View Counter
+    let views = localStorage.getItem(id) || 0;
+    views++;
+    localStorage.setItem(id, views);
+    document.getElementById("views").innerText = views;
+
+    const paragraphs = news.content.split("\n");
+    let formattedContent = "";
+
+    paragraphs.forEach(p => {
+        if(p.trim() !== ""){
+            formattedContent += <p>${p}</p>;
+        }
+    });
+
+    document.getElementById("content").innerHTML = formattedContent;
+
+})
+.catch(error => {
+    document.getElementById("content").innerHTML = "<h3>தகவல் ஏற்ற முடியவில்லை</h3>";
 });
 
-document.getElementById("content").innerHTML = formattedContent;
-
-function shareFB(){
-  window.open("https://www.facebook.com/sharer/sharer.php?u="+window.location.href);
-}
-function shareWA(){
-  window.open("https://api.whatsapp.com/send?text="+document.title+" "+window.location.href);
-}
-function goHome(){
-  window.location.href="../index.html";
-}
 </script>
 
 </body>
