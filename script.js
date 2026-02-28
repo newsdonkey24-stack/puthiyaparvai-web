@@ -1,45 +1,59 @@
-fetch("news.json?v=" + new Date().getTime())
-  .then(res => res.json())
-  .then(data => {
+document.addEventListener("DOMContentLoaded", function () {
 
-    // HOMEPAGE NEWS LIST
-    const container = document.getElementById("news-container");
-    if (container) {
-      container.innerHTML = "";
+  fetch("news.json")
+    .then(res => res.json())
+    .then(data => {
 
-      data.forEach(news => {
-        const div = document.createElement("div");
-        div.className = "news-item";
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id");
 
-        div.innerHTML = `
-          <a href="news/news.html?id=${news.id}">
-            <img src="${news.image}" style="width:100%;height:auto;">
-            <h3>${news.title}</h3>
-            <p>${news.summary}</p>
-          </a>
-        `;
+      // ===============================
+      // NEWS DETAIL PAGE
+      // ===============================
+      if (id) {
 
-        container.appendChild(div);
-      });
-    }
+        const news = data.find(n => n.id === id);
+        if (!news) return;
 
-    // SINGLE NEWS PAGE
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get("id");
+        document.getElementById("title").innerText = news.title;
+        document.getElementById("meta").innerText =
+          news.place + " | " +
+          news.date + " | " +
+          news.reporter + " | " +
+          news.category;
 
-    if (id) {
-      const article = data.find(n => n.id === id);
-      if (!article) return;
+        document.getElementById("image").src = news.image;
+        document.getElementById("content").innerText = news.content;
 
-      document.getElementById("title").innerText = article.title;
-      document.getElementById("meta").innerText =
-        article.date + " | " + article.place + " | " + article.reporter;
+      }
 
-      document.getElementById("image").src = "../" + article.image;
-      document.getElementById("content").innerText = article.content;
-    }
+      // ===============================
+      // HOME PAGE
+      // ===============================
+      else {
 
-  })
-  .catch(err => {
-    console.log("Error loading news", err);
-  });
+        const container = document.getElementById("news-container");
+        if (!container) return;
+
+        let html = "";
+
+        data.forEach(news => {
+          html += `
+            <div style="margin-bottom:30px;">
+              <a href="news/news.html?id=${news.id}">
+                <img src="${news.image}" style="width:100%;height:auto;">
+                <h2>${news.title}</h2>
+              </a>
+            </div>
+          `;
+        });
+
+        container.innerHTML = html;
+      }
+
+    })
+    .catch(err => {
+      console.log("Error loading news:", err);
+    });
+
+});
