@@ -28,7 +28,14 @@ document.addEventListener("DOMContentLoaded", function () {
   window.location.pathname.includes("/news/")
     ? "../" + news.image
     : news.image;
-        document.getElementById("content").innerText = news.content;
+      let paragraphs = news.content.split("\n\n");
+let html = "";
+
+paragraphs.forEach(p => {
+  html += "<p>" + p + "</p>";
+});
+
+document.getElementById("content").innerHTML = html;
 
       }
 
