@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const params = new URLSearchParams(window.location.search);
       const id = params.get("id");
+     const category = params.get("category");
 
       // ===============================
       // NEWS DETAIL PAGE
