@@ -320,3 +320,22 @@ p {
 .share-btn.facebook {
   background: #1877F2;
 }
+.main-header{
+    background:#c40000;
+    padding:20px 10px;
+    text-align:center;
+}
+
+.site-logo{
+    width:220px;
+    max-width:90%;
+    height:auto;
+    display:block;
+    margin:0 auto;
+}
+
+.site-subtitle{
+    color:#ffd700;
+    font-size:18px;
+    margin-top:10px;
+}
