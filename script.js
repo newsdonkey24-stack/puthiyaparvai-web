@@ -65,7 +65,15 @@ if (facebookBtn) {
 
         let html = "";
 
-        data.forEach(news => {
+       let filteredData = data;
+
+if (category) {
+    filteredData = data.filter(news => 
+        news.category.trim() === category.trim()
+    );
+}
+
+filteredData.forEach(news => {
           html += `
             <div style="margin-bottom:30px;">
               <a href="news/news.html?id=${news.id}">
