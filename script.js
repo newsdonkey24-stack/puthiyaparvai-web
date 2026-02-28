@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  fetch("news.json")
+ fetch(window.location.pathname.includes("/news/")
+  ? "../news.json"
+  : "news.json")
     .then(res => res.json())
     .then(data => {
 
@@ -22,7 +24,10 @@ document.addEventListener("DOMContentLoaded", function () {
           news.reporter + " | " +
           news.category;
 
-        document.getElementById("image").src = news.image;
+      document.getElementById("image").src =
+  window.location.pathname.includes("/news/")
+    ? "../" + news.image
+    : news.image;
         document.getElementById("content").innerText = news.content;
 
       }
