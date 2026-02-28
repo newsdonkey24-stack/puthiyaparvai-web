@@ -8,6 +8,7 @@ fetch('news.json?v=' + new Date().getTime())
     container.innerHTML = "";
 
     data.forEach(news => {
+        if(!news.id) return;
 
         const div = document.createElement("div");
         div.className = "news-item";
