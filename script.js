@@ -36,7 +36,22 @@ paragraphs.forEach(p => {
 });
 
 document.getElementById("content").innerHTML = html;
+const url = window.location.href;
 
+const whatsappBtn = document.getElementById("whatsappShare");
+const facebookBtn = document.getElementById("facebookShare");
+
+if (whatsappBtn) {
+  whatsappBtn.href =
+    "https://wa.me/?text=" +
+    encodeURIComponent(news.title + " - " + url);
+}
+
+if (facebookBtn) {
+  facebookBtn.href =
+    "https://www.facebook.com/sharer/sharer.php?u=" +
+    encodeURIComponent(url);
+}
       }
 
       // ===============================
