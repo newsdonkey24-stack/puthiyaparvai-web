@@ -327,7 +327,7 @@ p {
 }
 .site-logo{
     width:100%;
-    max-width:300px;   /* Desktop limit */
+    max-width:420px;   /* Desktop limit */
     height:auto;
     display:block;
     margin:0 auto;
