@@ -29,6 +29,26 @@ document.addEventListener("DOMContentLoaded", function () {
   window.location.pathname.includes("/news/")
     ? "../" + news.image
     : news.image;
+       // ===== GALLERY SUPPORT =====
+const gallery = document.getElementById("gallery");
+
+if (gallery && news.images && news.images.length > 0) {
+    let galleryHTML = "";
+
+    news.images.forEach(img => {
+        galleryHTML += `
+            <div class="gallery-item">
+                <img src="${
+                    window.location.pathname.includes("/news/")
+                        ? "../" + img
+                        : img
+                }">
+            </div>
+        `;
+    });
+
+    gallery.innerHTML = galleryHTML;
+}
       let paragraphs = news.content.split("\n\n");
 let html = "";
 
