@@ -134,3 +134,11 @@ breaking.innerText = text;
 document.addEventListener("contextmenu", function(e){
 e.preventDefault();
 });
+// Disable copy shortcut
+document.addEventListener("keydown", function(e){
+
+if(e.ctrlKey && (e.key === "c" || e.key === "u" || e.key === "s")){
+e.preventDefault();
+}
+
+});
