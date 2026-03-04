@@ -158,16 +158,19 @@ e.preventDefault();
 
 });
 // ===== MORE NEWS SECTION =====
-
 document.addEventListener("DOMContentLoaded", function () {
 
 const moreNews = document.getElementById("more-news");
 
-if (moreNews && typeof newsData !== "undefined") {
+if (moreNews) {
+
+fetch("../news.json")
+.then(res => res.json())
+.then(data => {
 
 let html = "";
 
-newsData.slice(0,4).forEach(news => {
+data.slice(0,4).forEach(news => {
 
 html += `
 <div style="margin-bottom:20px;border-bottom:1px solid #ddd;padding-bottom:10px;">
@@ -181,6 +184,8 @@ html += `
 });
 
 moreNews.innerHTML = html;
+
+});
 
 }
 
