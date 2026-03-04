@@ -113,3 +113,20 @@ filteredData.forEach(news => {
     });
 
 });
+// BREAKING NEWS TEXT
+
+const breaking = document.getElementById("breakingNews");
+
+fetch("news.json")
+.then(response => response.json())
+.then(data => {
+
+let text = "";
+
+data.slice(0,5).forEach(news=>{
+text += " 🔴 " + news.title + " | ";
+});
+
+breaking.innerText = text;
+
+});
