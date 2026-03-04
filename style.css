@@ -357,3 +357,9 @@ p {
 .gallery-item img:hover {
     transform: scale(1.05);
 }
+body{
+-webkit-user-select:none;
+-moz-user-select:none;
+-ms-user-select:none;
+user-select:none;
+}
