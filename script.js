@@ -160,7 +160,7 @@ e.preventDefault();
 // ===== MORE NEWS SECTION =====
 
 const moreNews = document.getElementById("more-news");
-
+console.log(newsData);
 if (moreNews && typeof newsData !== "undefined") {
 
   let html = "";
