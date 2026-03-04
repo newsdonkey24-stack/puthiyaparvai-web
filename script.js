@@ -130,3 +130,7 @@ text += " 🔴 " + news.title + " | ";
 breaking.innerText = text;
 
 });
+// Disable right click
+document.addEventListener("contextmenu", function(e){
+e.preventDefault();
+});
