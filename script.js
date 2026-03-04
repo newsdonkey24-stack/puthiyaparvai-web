@@ -157,3 +157,27 @@ e.clipboardData.setData("text/plain", finalText);
 e.preventDefault();
 
 });
+// ===== MORE NEWS SECTION =====
+
+const moreNews = document.getElementById("more-news");
+
+if (moreNews && typeof newsData !== "undefined") {
+
+  let html = "";
+
+  newsData.slice(0,4).forEach(news => {
+
+    html += `
+      <div style="margin-bottom:20px;border-bottom:1px solid #ddd;padding-bottom:10px;">
+        <a href="../news/news.html?id=${news.id}" style="text-decoration:none;color:#000;">
+          <img src="../${news.image}" style="width:100%;max-height:200px;object-fit:cover;border-radius:6px;">
+          <h4 style="margin-top:8px;">${news.title}</h4>
+        </a>
+      </div>
+    `;
+
+  });
+
+  moreNews.innerHTML = html;
+
+}
