@@ -142,3 +142,18 @@ e.preventDefault();
 }
 
 });
+// COPY SOURCE ADD
+
+document.addEventListener("copy", function(e){
+
+let selectedText = window.getSelection().toString();
+
+let source = "\n\nSource: புதுய பார்வை\nhttps://newsdonkey24-stack.github.io/pudhiyaparvai-web";
+
+let finalText = selectedText + source;
+
+e.clipboardData.setData("text/plain", finalText);
+
+e.preventDefault();
+
+});
