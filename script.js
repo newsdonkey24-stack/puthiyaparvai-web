@@ -32,10 +32,10 @@ document.addEventListener("DOMContentLoaded", function () {
        // ===== GALLERY SUPPORT =====
 const gallery = document.getElementById("gallery");
 
-if (gallery && news.images && news.images.length > 0) {
+ {if (gallery && news.gallery && news.gallery.length > 0)
     let galleryHTML = "";
 
-    news.images.forEach(img => {
+    news.gallery.forEach(img => {
         galleryHTML += `
             <div class="gallery-item">
                 <img src="${
