@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ? "../" + news.image
     : news.image;
        // ===== GALLERY SUPPORT =====
+       const gallery = document.getElementById("gallery");
 if (gallery && news.gallery && news.gallery.length > 0) {
     let galleryHTML = "";
 
