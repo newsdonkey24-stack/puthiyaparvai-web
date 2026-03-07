@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
        // ===== GALLERY SUPPORT =====
 const gallery = document.getElementById("gallery");
 
- {if (gallery && news.gallery && news.gallery.length > 0)
+ if (gallery && news.gallery && news.gallery.length > 0)
     let galleryHTML = "";
 
     news.gallery.forEach(img => {
