@@ -172,16 +172,16 @@ let html = "";
 data.slice(0,4).forEach(news => {
 
 html += `
-<div style="margin-bottom:20px;border-bottom:1px solid #ddd;padding-bottom:10px;">
-<a href="../news/news.html?id=${news.id}" style="text-decoration:none;color:#000;">
-<img src="../${news.image}" style="width:100%;height:auto;border-radius:6px;">
-<h4 style="margin-top:8px;">${news.title}</h4>
+<div style="display:flex;gap:15px;margin-bottom:20px;border-bottom:1px solid #ddd;padding-bottom:10px;align-items:center;">
+<a href="../news/news.html?id=${news.id}" style="text-decoration:none;color:#000;display:flex;gap:15px;align-items:center;">
+
+<img src="../${news.image}" style="width:120px;height:80px;object-fit:cover;border-radius:6px;">
+
+<h4 style="margin:0;font-size:18px;line-height:1.4;">${news.title}</h4>
+
 </a>
 </div>
 `;
-
-});
-
 moreNews.innerHTML = html;
 
 });
