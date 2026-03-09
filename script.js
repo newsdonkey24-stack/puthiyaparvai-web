@@ -248,7 +248,7 @@ data.slice(0,4).forEach(news => {
 html += `
 <div style="display:flex;gap:15px;margin-bottom:20px;border-bottom:1px solid #ddd;padding-bottom:10px;align-items:center;">
 
-<a href="../news/news.html?id=${news.id}" style="text-decoration:none;color:#000;display:flex;gap:15px;align-items:center;">
+<a href="news/news.html?id=${news.id}" style="text-decoration:none;color:#000;display:flex;gap:15px;align-items:center;">
 
 <img src="../${news.image}" style="width:120px;height:80px;object-fit:cover;border-radius:6px;">
 
