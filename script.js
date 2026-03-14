@@ -235,3 +235,83 @@ e.preventDefault();
 }
 
 });
+// HOMEPAGE NEWS LAYOUT
+
+if(document.getElementById("big-news")){
+
+fetch("news.json")
+.then(res=>res.json())
+.then(data=>{
+
+// BIG NEWS
+let big=data[0];
+
+document.getElementById("big-news").innerHTML=`
+
+<a href="news/news.html?id=${big.id}" style="text-decoration:none;color:black">
+
+<img src="${big.image}">
+
+<h2>${big.title}</h2>
+
+</a>
+
+`;
+
+
+// SIDE NEWS
+
+let sideHTML="";
+
+data.slice(1,5).forEach(news=>{
+
+sideHTML+=`
+
+<div class="side-item">
+
+<a href="news/news.html?id=${news.id}" style="text-decoration:none;color:black">
+
+<img src="${news.image}">
+
+<h4>${news.title}</h4>
+
+</a>
+
+</div>
+
+`;
+
+});
+
+document.getElementById("side-news").innerHTML=sideHTML;
+
+
+// GRID NEWS
+
+let gridHTML="";
+
+data.slice(5).forEach(news=>{
+
+gridHTML+=`
+
+<div class="grid-item">
+
+<a href="news/news.html?id=${news.id}" style="text-decoration:none;color:black">
+
+<img src="${news.image}">
+
+<h3>${news.title}</h3>
+
+</a>
+
+</div>
+
+`;
+
+});
+
+document.getElementById("news-grid").innerHTML=gridHTML;
+
+});
+
+}
