@@ -1,253 +1,70 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-// ===============================
-// LOAD NEWS DATA
-// ===============================
-fetch(window.location.pathname.includes("/news/")
-? "../news.json"
-: "news.json"
-)
-
+fetch("news.json")
 .then(res => res.json())
-
 .then(data => {
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
-const category = params.get("category");
 
-// ===============================
-// NEWS DETAIL PAGE
-// ===============================
-if (id) {
 
-  const news = data.find(n => n.id == id);
-  if (!news) return;
+// =============================
+// SINGLE NEWS PAGE
+// =============================
 
-  document.getElementById("title").innerText = news.title;
+if(id){
 
-  document.getElementById("meta").innerText =
-    news.place + " | " +
-    news.date + " | " +
-    news.reporter + " | " +
-    news.category;
+let news = data.find(n => n.id === id);
 
-  // Main Image
-  const image = document.getElementById("image");
-  if (image) {
-    image.src = window.location.pathname.includes("/news/")
-      ? "../" + news.image
-      : news.image;
-  }
+if(news){
 
-  // Gallery
-  const gallery = document.getElementById("gallery");
+document.getElementById("news-title").innerText = news.title;
 
-  if (gallery && news.gallery && news.gallery.length > 0) {
+document.getElementById("news-meta").innerText =
+${news.location} | ${news.date} | ${news.reporter} | ${news.category};
 
-    let galleryHTML = "";
+document.getElementById("news-image").src = news.image;
 
-    news.gallery.forEach(img => {
+document.getElementById("news-summary").innerText = news.summary;
 
-      galleryHTML += `
-      <div class="gallery-item">
-        <img src="${
-          window.location.pathname.includes("/news/")
-          ? "../" + img
-          : img
-        }">
-      </div>
-      `;
+document.getElementById("news-content").innerText = news.content;
 
-    });
 
-    gallery.innerHTML = galleryHTML;
-  }
+// ===== GALLERY =====
 
-  // Content
-  let paragraphs = news.content.split("\n\n");
+if(news.gallery){
 
-  let html = "";
+let galleryHTML="";
 
-  paragraphs.forEach(p => {
-    html += "<p>" + p + "</p>";
-  });
+news.gallery.forEach(img=>{
 
-  document.getElementById("content").innerHTML = html;
+galleryHTML+=`
+<div class="gallery-item">
+<img src="${img}">
+</div>
+`;
 
-  // Share Buttons
-  const url = window.location.href;
+});
 
-  const whatsappBtn = document.getElementById("whatsappShare");
-  const facebookBtn = document.getElementById("facebookShare");
-
-  if (whatsappBtn) {
-    whatsappBtn.href =
-      "https://wa.me/?text=" +
-      encodeURIComponent(news.title + " - " + url);
-  }
-
-  if (facebookBtn) {
-    facebookBtn.href =
-      "https://www.facebook.com/sharer/sharer.php?u=" +
-      encodeURIComponent(url);
-  }
+document.getElementById("news-gallery").innerHTML = galleryHTML;
 
 }
 
-// ===============================
-// HOME PAGE
-// ===============================
-else {
-
-  const container = document.getElementById("news-container");
-
-  if (!container) return;
-
-  let html = "";
-
-  let filteredData = data;
-
-  if (category) {
-    filteredData = data.filter(news =>
-      news.category.trim() == category.trim()
-    );
-  }
-
-  filteredData.forEach(news => {
-
-    html += `
-    <div style="display:flex;gap:15px;margin-bottom:20px;border-bottom:1px solid #ddd;padding-bottom:10px;align-items:center;">
-
-    <a href="news/news.html?id=${news.id}" style="text-decoration:none;color:#000;display:flex;gap:15px;align-items:center;">
-
-    <img src="${news.image}" style="width:120px;height:80px;object-fit:cover;border-radius:6px;">
-
-    <h4 style="margin:0;font-size:18px;line-height:1.4;">
-    ${news.title}
-    </h4>
-
-    </a>
-    </div>
-    `;
-
-  });
-
-  container.innerHTML = html;
+}
 
 }
 
-})
 
-.catch(err => {
-console.log("Error loading news:", err);
-});
 
-});
-
-// ===============================
-// BREAKING NEWS
-// ===============================
-
-const breaking = document.getElementById("breakingNews");
-
-if (breaking) {
-
-fetch("news.json")
-
-.then(res => res.json())
-
-.then(data => {
-
-let text = "";
-
-data.slice(0,5).forEach(news => {
-
-  text += " 🔴 " + news.title + " | ";
-
-});
-
-breaking.innerText = text;
-
-});
-
-}
-
-// ===============================
-// MORE NEWS SECTION
-// ===============================
-
-document.addEventListener("DOMContentLoaded", function () {
-
-const moreNews = document.getElementById("more-news");
-
-if (!moreNews) return;
-
-fetch("../news.json")
-
-.then(res => res.json())
-
-.then(data => {
-
-let html = "";
-
-data.slice(0,4).forEach(news => {
-
-  html += `
-  <div style="display:flex;gap:15px;margin-bottom:20px;border-bottom:1px solid #ddd;padding-bottom:10px;align-items:center;">
-
-  <a href="news.html?id=${news.id}" style="text-decoration:none;color:#000;display:flex;gap:15px;align-items:center;">
-
-  <img src="../${news.image}" style="width:120px;height:80px;object-fit:cover;border-radius:6px;">
-
-  <h4 style="margin:0;font-size:18px;line-height:1.4;">
-  ${news.title}
-  </h4>
-
-  </a>
-  </div>
-  `;
-
-});
-
-moreNews.innerHTML = html;
-
-});
-
-});
-
-// ===============================
-// DISABLE RIGHT CLICK
-// ===============================
-
-document.addEventListener("contextmenu", function(e){
-e.preventDefault();
-});
-
-// ===============================
-// DISABLE COPY SHORTCUT
-// ===============================
-
-document.addEventListener("keydown", function(e){
-
-if (e.ctrlKey && (e.key === "c" || e.key === "u" || e.key === "s")) {
-e.preventDefault();
-}
-
-});
-// HOMEPAGE NEWS LAYOUT
+// =============================
+// HOMEPAGE BIG NEWS
+// =============================
 
 if(document.getElementById("big-news")){
 
-fetch("news.json")
-.then(res=>res.json())
-.then(data=>{
+let big = data[0];
 
-// BIG NEWS
-let big=data[0];
-
-document.getElementById("big-news").innerHTML=`
-
+document.getElementById("big-news").innerHTML = `
 <a href="news/news.html?id=${big.id}" style="text-decoration:none;color:black">
 
 <img src="${big.image}">
@@ -255,11 +72,17 @@ document.getElementById("big-news").innerHTML=`
 <h2>${big.title}</h2>
 
 </a>
-
 `;
 
+}
 
+
+
+// =============================
 // SIDE NEWS
+// =============================
+
+if(document.getElementById("side-news")){
 
 let sideHTML="";
 
@@ -285,8 +108,15 @@ sideHTML+=`
 
 document.getElementById("side-news").innerHTML=sideHTML;
 
+}
 
-// GRID NEWS
+
+
+// =============================
+// NEWS GRID
+// =============================
+
+if(document.getElementById("news-grid")){
 
 let gridHTML="";
 
@@ -312,6 +142,28 @@ gridHTML+=`
 
 document.getElementById("news-grid").innerHTML=gridHTML;
 
+}
+
+
+
+// =============================
+// BREAKING NEWS TICKER
+// =============================
+
+if(document.getElementById("breakingNews")){
+
+let breaking="";
+
+data.slice(0,5).forEach(news=>{
+
+breaking+=` 🔴 ${news.title} &nbsp;&nbsp;&nbsp;`;
+
 });
 
+document.getElementById("breakingNews").innerHTML=breaking;
+
 }
+
+});
+
+});
