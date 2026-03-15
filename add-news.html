@@ -17,6 +17,7 @@ input,textarea{
 width:100%;
 padding:10px;
 margin:8px 0;
+font-size:16px;
 }
 
 button{
@@ -25,6 +26,7 @@ background:#c00;
 color:white;
 border:none;
 cursor:pointer;
+font-size:16px;
 }
 
 pre{
@@ -58,7 +60,7 @@ white-space:pre-wrap;
 
 <textarea id="content" placeholder="Full News"></textarea>
 
-<button type="button" onclick="generate()">Generate JSON</button>
+<button type="button" onclick="generateJSON()">Generate JSON</button>
 
 <h3>Generated JSON</h3>
 
@@ -66,57 +68,48 @@ white-space:pre-wrap;
 
 <script>
 
-function generate(){
+function generateJSON(){
 
-let title=document.getElementById("title").value;
+const title=document.getElementById("title").value;
+const location=document.getElementById("location").value;
+const date=document.getElementById("date").value;
+const reporter=document.getElementById("reporter").value;
+const category=document.getElementById("category").value;
+const image=document.getElementById("image").value;
 
-let location=document.getElementById("location").value;
+const galleryInput=document.getElementById("gallery").value;
+const galleryLines=galleryInput.split("\n");
 
-let date=document.getElementById("date").value;
+let gallery=[];
 
-let reporter=document.getElementById("reporter").value;
-
-let category=document.getElementById("category").value;
-
-let image=document.getElementById("image").value;
-
-let gallery=document.getElementById("gallery").value.split("\n");
-
-let summary=document.getElementById("summary").value;
-
-let content=document.getElementById("content").value;
-
-let id=title
-.toLowerCase()
-.replace(/[^\w\s]/gi,'')
-.replace(/\s+/g,'-');
-
-let galleryJSON="";
-
-gallery.forEach(img=>{
-if(img.trim()!=""){
-galleryJSON+="images/news/${img.trim()}",;
+galleryLines.forEach(line=>{
+if(line.trim()!=""){
+gallery.push("images/news/"+line.trim());
 }
 });
 
-galleryJSON=galleryJSON.slice(0,-1);
+const summary=document.getElementById("summary").value;
+const content=document.getElementById("content").value;
 
-let json=`
-{
-"id":"${id}",
-"title":"${title}",
-"location":"${location}",
-"date":"${date}",
-"reporter":"${reporter}",
-"category":"${category}",
-"image":"images/news/${image}",
-"gallery":[${galleryJSON}],
-"summary":"${summary}",
-"content":"${content.replace(/\n/g,"\\n\\n")}"
-}
-`;
+let id=title.toLowerCase()
+.replace(/[^\w\s]/gi,"")
+.replace(/\s+/g,"-");
 
-document.getElementById("output").textContent=json;
+const json={
+id:id,
+title:title,
+location:location,
+date:date,
+reporter:reporter,
+category:category,
+image:"images/news/"+image,
+gallery:gallery,
+summary:summary,
+content:content.replace(/\n/g,"\n\n")
+};
+
+document.getElementById("output").textContent=
+JSON.stringify(json,null,2);
 
 }
 
