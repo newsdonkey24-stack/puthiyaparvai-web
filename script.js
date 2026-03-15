@@ -26,11 +26,11 @@ if (id) {
 
   document.getElementById("title").innerText = news.title;
 
-  document.getElementById("meta").innerText =
-    news.place + " | " +
-    news.date + " | " +
-    news.reporter + " | " +
-    news.category;
+ document.getElementById("meta").innerText =
+news.location + " | " +
+news.date + " | " +
+news.reporter + " | " +
+news.category;
 
   // Main Image
   const image = document.getElementById("image");
