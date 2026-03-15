@@ -26,8 +26,8 @@ if (id) {
 
   document.getElementById("title").innerText = news.title;
 
- document.getElementById("meta").innerText =
-news.location + " | " +
+document.getElementById("meta").innerText =
+(news.location || news.place) + " | " +
 news.date + " | " +
 news.reporter + " | " +
 news.category;
