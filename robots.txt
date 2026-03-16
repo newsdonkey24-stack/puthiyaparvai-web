@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://newsdonkey24-stack.github.io/puthiyaparvai-web/sitemap.xml
