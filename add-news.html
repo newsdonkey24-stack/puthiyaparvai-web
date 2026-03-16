@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Add News</title>
+<title>Advanced News Generator</title>
 
 <style>
 
 body{
 font-family:Arial;
-max-width:800px;
+max-width:900px;
 margin:auto;
 padding:20px;
 }
@@ -26,7 +26,7 @@ background:#c00;
 color:white;
 border:none;
 cursor:pointer;
-font-size:16px;
+margin-top:10px;
 }
 
 pre{
@@ -35,12 +35,17 @@ padding:15px;
 white-space:pre-wrap;
 }
 
+img{
+max-width:200px;
+margin-top:10px;
+}
+
 </style>
 </head>
 
 <body>
 
-<h2>Add News Generator</h2>
+<h2>📰 Advanced News Generator</h2>
 
 <input id="title" placeholder="Title">
 
@@ -52,7 +57,9 @@ white-space:pre-wrap;
 
 <input id="category" placeholder="Category">
 
-<input id="image" placeholder="Main Image (example: cbm-news-1.jpeg)">
+<input id="image" placeholder="Main Image (example: cbm-news-1.jpeg)" oninput="previewImage()">
+
+<img id="preview">
 
 <textarea id="gallery" placeholder="Gallery images (one per line)"></textarea>
 
@@ -60,7 +67,9 @@ white-space:pre-wrap;
 
 <textarea id="content" placeholder="Full News"></textarea>
 
-<button type="button" onclick="generateJSON()">Generate JSON</button>
+<button onclick="generate()">Generate JSON</button>
+
+<button onclick="copyJSON()">Copy JSON</button>
 
 <h3>Generated JSON</h3>
 
@@ -68,17 +77,30 @@ white-space:pre-wrap;
 
 <script>
 
-function generateJSON(){
+function previewImage(){
 
-const title=document.getElementById("title").value;
-const location=document.getElementById("location").value;
-const date=document.getElementById("date").value;
-const reporter=document.getElementById("reporter").value;
-const category=document.getElementById("category").value;
-const image=document.getElementById("image").value;
+let image=document.getElementById("image").value;
 
-const galleryInput=document.getElementById("gallery").value;
-const galleryLines=galleryInput.split("\n");
+document.getElementById("preview").src="../images/news/"+image;
+
+}
+
+function generate(){
+
+let title=document.getElementById("title").value;
+
+if(title==""){
+alert("Title required");
+return;
+}
+
+let location=document.getElementById("location").value;
+let date=document.getElementById("date").value;
+let reporter=document.getElementById("reporter").value;
+let category=document.getElementById("category").value;
+let image=document.getElementById("image").value;
+
+let galleryLines=document.getElementById("gallery").value.split("\n");
 
 let gallery=[];
 
@@ -88,14 +110,15 @@ gallery.push("images/news/"+line.trim());
 }
 });
 
-const summary=document.getElementById("summary").value;
-const content=document.getElementById("content").value;
+let summary=document.getElementById("summary").value;
+
+let content=document.getElementById("content").value;
 
 let id=title.toLowerCase()
 .replace(/[^\w\s]/gi,"")
 .replace(/\s+/g,"-");
 
-const json={
+let json={
 id:id,
 title:title,
 location:location,
@@ -110,6 +133,16 @@ content:content.replace(/\n/g,"\n\n")
 
 document.getElementById("output").textContent=
 JSON.stringify(json,null,2);
+
+}
+
+function copyJSON(){
+
+let text=document.getElementById("output").textContent;
+
+navigator.clipboard.writeText(text);
+
+alert("JSON copied");
 
 }
 
