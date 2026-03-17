@@ -183,7 +183,7 @@ const moreNews = document.getElementById("more-news");
 
 if (!moreNews) return;
 
-fetch("../news.json")
+fetch("https://newsdonkey24-stack.github.io/puthiyaparvai-web/news.json")
 
 .then(res => res.json())
 
