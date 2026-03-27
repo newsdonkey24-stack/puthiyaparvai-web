@@ -3,29 +3,81 @@
 <head>
   <title>Add News</title>
   <meta charset="UTF-8">
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 8px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    pre {
+      background: #000;
+      color: #0f0;
+      padding: 10px;
+      overflow: auto;
+    }
+  </style>
 </head>
 
 <body>
 
+<div class="container">
+
 <h2>📰 Add News</h2>
 
-<input id="title" placeholder="Title"><br><br>
-<input id="location" placeholder="Location"><br><br>
-<input id="date" placeholder="Date"><br><br>
-<input id="reporter" placeholder="Reporter"><br><br>
-<input id="category" placeholder="Category"><br><br>
-<input id="image" placeholder="Main Image (ex: img1.jpg)"><br><br>
+<input id="title" placeholder="Title">
+<input id="location" placeholder="Location">
+<input id="date" placeholder="Date">
+<input id="reporter" placeholder="Reporter">
+<input id="category" placeholder="Category">
+<input id="image" placeholder="Main Image (ex: img1.jpg)">
 
-<textarea id="gallery" placeholder="Gallery images (one per line)"></textarea><br><br>
-
-<textarea id="summary" placeholder="Summary"></textarea><br><br>
-
-<textarea id="content" placeholder="Full Content"></textarea><br><br>
+<textarea id="gallery" placeholder="Gallery images (one per line)"></textarea>
+<textarea id="summary" placeholder="Summary"></textarea>
+<textarea id="content" placeholder="Full Content"></textarea>
 
 <button onclick="generate()">Generate News JSON</button>
 
 <h3>📦 Output</h3>
 <pre id="output"></pre>
+
+</div>
 
 <script>
 function generate(){
@@ -42,7 +94,6 @@ function generate(){
   let category = document.getElementById("category").value;
   let image = document.getElementById("image").value;
 
-  // Gallery
   let galleryLines = document.getElementById("gallery").value.split("\n");
   let gallery = [];
 
@@ -55,7 +106,6 @@ function generate(){
   let summary = document.getElementById("summary").value;
   let content = document.getElementById("content").value;
 
-  // Unique ID
   let id = "news-" + Date.now();
 
   let json = {
