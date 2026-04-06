@@ -315,3 +315,18 @@ document.getElementById("news-grid").innerHTML=gridHTML;
 });
 
 }
+function updateDateTime(){
+  const now = new Date();
+
+  const day = now.toLocaleDateString('ta-IN', { weekday: 'long' });
+  const date = now.toLocaleDateString('ta-IN');
+  const time = now.toLocaleTimeString('ta-IN');
+
+  const el = document.getElementById("datetime");
+  if(el){
+    el.innerHTML = "📅 " + day + " | " + date + " | ⏰ " + time;
+  }
+}
+
+setInterval(updateDateTime, 1000);
+updateDateTime();
